@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="user_white">#FFFFFF</color>
+    <color name="user_azul_escuro">#33404F</color>
+    <color name="user_verde">#00DDA3</color>
+    <color name="user_verde_claro">#B5C5C3</color>
+    <color name="user_verde_mais_claro">#E1FFEF</color>
+
+    <color name="app_background">#F4F6F9</color> <color name="header_background">@color/user_azul_escuro</color>
+    <color name="header_text_primary">@color/user_white</color>
+    <color name="header_text_secondary">@color/user_verde_claro</color> <color name="header_icon_tint">@color/user_white</color>
+
+    <color name="progress_bar_filled">@color/user_verde</color>
+    <color name="progress_bar_track">@color/user_verde_claro</color> <color name="activities_section_card_background">@color/user_white</color>
+    <color name="activities_title_text">@color/user_azul_escuro</color>
+    <color name="activity_item_background">@color/user_white</color>
+    <color name="activity_item_icon_tint">@color/user_azul_escuro</color>
+    <color name="activity_item_text_color">@color/user_azul_escuro</color>
+
+    <color name="promo_banner_background">@color/user_verde_mais_claro</color>
+    <color name="promo_banner_text">@color/user_azul_escuro</color>
+    <color name="promo_banner_button_background">@color/user_verde</color>
+    <color name="promo_banner_button_text">@color/user_white</color>
+    <color name="promo_banner_close_icon_tint">@color/user_verde</color>
+
+    <color name="bottom_nav_bar_background">@color/user_azul_escuro</color>
+    <color name="bottom_nav_item_selected_tint">@color/user_verde</color>
+    <color name="bottom_nav_item_unselected_tint">@color/user_verde_claro</color>
+
+    <color name="card_border_light">#EAECEE</color> </resources>

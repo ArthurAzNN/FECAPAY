@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Cabeçalho com fundo azul escuro -->
+    <View
+        android:id="@+id/header_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/header_background"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Status Bar (Hora, Sinal, Bateria) -->
+    <ImageView
+        android:id="@+id/tv_time"
+        android:layout_width="36dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/clock"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_signal"
+        android:layout_width="22dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/conect"
+        app:layout_constraintEnd_toStartOf="@+id/iv_wifi"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_wifi"
+        android:layout_width="21dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/wifi"
+        app:layout_constraintEnd_toStartOf="@+id/iv_battery"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_battery"
+        android:layout_width="24dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/battery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Logo e Menu -->
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="FECAPAY"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+        app:layout_constraintStart_toEndOf="@+id/iv_logo"
+        app:layout_constraintTop_toTopOf="@+id/iv_logo" />
+
+    <ImageView
+        android:id="@+id/iv_menu"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_battery" />
+
+    <!-- Saudação e Saldo -->
+    <TextView
+        android:id="@+id/tv_greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Olá Ana!"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+
+    <TextView
+        android:id="@+id/tv_balance_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="SALDO EM CONTA"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_greeting" />
+
+    <TextView
+        android:id="@+id/tv_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="R$2.000"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_balance_label" />
+
+    <!-- Barra de Progresso -->
+
+    <!-- Card Principal (Conteúdo Branco) -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="195dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:progress="60"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_balance" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="24dp"
+            android:radius="46dp">
+
+            <!-- Título Atividades -->
+            <TextView
+                android:id="@+id/tv_activities_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atividades"
+                android:textColor="@color/text_dark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Cards de Atividades -->
+            <LinearLayout
+                android:id="@+id/activities_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/tv_activities_title">
+
+                <!-- Card Conta -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/light_gray"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/conta" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Conta"
+                            android:textColor="@color/text_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Card Financeiro -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_financial"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/light_gray"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/financeiro" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Financeiro"
+                            android:textColor="@color/text_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Card Ajuda -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_help"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/light_gray"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/ajuda" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ajuda"
+                            android:textColor="@color/text_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Card Promocional -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_promo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/light_green"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/activities_container">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/iv_close"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_close"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/gray" />
+
+                    <ImageView
+                        android:id="@+id/iv_promo"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/pig"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_promo_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Como usar seu cartão Fecap para pagamento?"
+                        android:textColor="@color/text_dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/iv_promo"
+                        app:layout_constraintTop_toTopOf="@+id/iv_promo" />
+
+                    <Button
+                        android:id="@+id/btn_learn_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="180dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/button_background"
+                        android:paddingHorizontal="16dp"
+                        android:text="@string/saiba_mais"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/iv_promo"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_promo_title" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Barra de Navegação Inferior -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/primary_dark"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="16dp">
+
+            <LinearLayout
+                android:id="@+id/nav_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/home" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/indicator_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nav_financial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/financeiro"
+                    app:tint="@android:color/white" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nav_profile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/perfil" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
